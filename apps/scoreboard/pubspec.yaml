@@ -3,7 +3,7 @@ description: Offline scoreboard for sport games with an operator UI, layout edit
 publish_to: none
 
 # Single source of truth for the release version (see CHANGELOG.md).
-version: 1.0.0+1
+version: 1.0.1+1
 # Read at runtime by the About dialog.
 app_author: Henrik Frühling
 
