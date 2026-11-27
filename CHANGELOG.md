@@ -10,6 +10,7 @@ is used as the GitHub release description.
 
 ### Added
 - Loading screen displayed until the web app renders.
+- Linux desktop support with native window controls, file dialogs, drag-and-drop, and a separate scoreboard display window.
 
 ## 1.0.1 - Web demo
 

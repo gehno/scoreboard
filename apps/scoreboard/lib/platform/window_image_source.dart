@@ -4,7 +4,7 @@ import 'dart:ui';
 import '../settings/image_source.dart';
 import 'window_control.dart';
 
-/// [ImageSource] backed by the native Windows runner.
+/// [ImageSource] backed by a native desktop runner.
 class WindowImageSource implements ImageSource {
   @override
   bool get canPick => true;

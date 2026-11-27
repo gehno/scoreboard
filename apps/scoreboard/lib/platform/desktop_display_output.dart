@@ -68,6 +68,8 @@ class DisplayLaunchArguments {
   }
 }
 
-/// Windows gets a real display; other platforms none.
+/// Windows and Linux get a real display; other platforms none.
 Future<DisplayOutput> createDisplayOutput() async =>
-    Platform.isWindows ? DesktopDisplayOutput.start() : const NoDisplayOutput();
+    Platform.isWindows || Platform.isLinux
+    ? DesktopDisplayOutput.start()
+    : const NoDisplayOutput();

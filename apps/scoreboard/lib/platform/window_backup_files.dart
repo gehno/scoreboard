@@ -3,7 +3,7 @@ import 'dart:io';
 import '../storage/backup_service.dart';
 import 'window_control.dart';
 
-/// [BackupFiles] using the native Windows file dialogs.
+/// [BackupFiles] using native desktop file dialogs.
 class WindowBackupFiles implements BackupFiles {
   const WindowBackupFiles();
 

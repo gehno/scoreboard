@@ -15,7 +15,7 @@ abstract interface class DisplayOutput {
   Future<void> dispose();
 }
 
-/// Used where no display output exists (tests, non-Windows platforms).
+/// Used where no display output exists (tests and unsupported platforms).
 class NoDisplayOutput implements DisplayOutput {
   const NoDisplayOutput();
 

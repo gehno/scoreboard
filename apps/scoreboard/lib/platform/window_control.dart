@@ -3,11 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
-/// Native window control (Windows only for now), implemented without a plugin.
+/// Native window control, implemented by each desktop runner.
 abstract final class WindowControl {
   static const _channel = MethodChannel('scoreboard/window');
 
-  static bool get isSupported => Platform.isWindows;
+  static bool get isSupported => Platform.isWindows || Platform.isLinux;
 
   static Future<int> monitorCount() =>
       _invoke<int>('monitorCount', fallback: 1);

@@ -1,8 +1,8 @@
 # Scoreboard
 
-Offline scoreboard for sports matches, built with Flutter/Dart for Windows desktop.
-One operator window controls the match and a separate display window shows the
-scoreboard on a second monitor, projector or TV.
+Offline scoreboard for sports matches, built with Flutter/Dart for Windows and
+Linux desktop. One operator window controls the match and a separate display
+window shows the scoreboard on a second monitor, projector or TV.
 
 See [FEATURES.md](FEATURES.md) for the full feature list and
 [CHANGELOG.md](CHANGELOG.md) for release notes.
@@ -17,7 +17,12 @@ See [FEATURES.md](FEATURES.md) for the full feature list and
 - Works fully offline.
 
 ## Getting started
-Requirements: Flutter (stable) with Windows desktop support and Visual Studio 2022 Build Tools ("Desktop development with C++").
+Windows requires Flutter (stable) with Windows desktop support and Visual
+Studio 2022 Build Tools ("Desktop development with C++"). Linux requires
+Flutter (stable) with Linux desktop support and the
+[Linux desktop prerequisites](https://docs.flutter.dev/platform-integration/linux/setup):
+`clang`, `cmake`, `ninja-build`, `pkg-config`, GTK 3 development files and
+`libstdc++` development files.
 
 ```
 cd apps/scoreboard
@@ -27,6 +32,11 @@ flutter run -d windows
 
 Release build: `flutter build windows --release`. The output is written to
 `apps/scoreboard/build/windows/x64/runner/Release`.
+
+On Linux, use `flutter run -d linux` or build a release bundle with
+`flutter build linux --release`. The bundle is written to
+`apps/scoreboard/build/linux/x64/release/bundle`; the target system needs the
+GTK 3 and other system libraries linked by the build.
 
 ## Web demo
 The browser version is a preview of the operator UI and its scoreboard. Match
@@ -63,7 +73,7 @@ settings and visibility must permit deployment.
   - Shortcuts.
 - **Themes:** Classic, Midnight, Neon, Terminal, Forest and High contrast (dark), plus Daylight, Sunrise, Mint, Sky, Paper and High contrast light (light). A theme recolors the scoreboard and restyles the operator UI independently of the sport. "Classic" keeps each sport's own colors.
 - **Layout editor:** layouts define what is shown and where. Each sport has its own saved layout.
-- **Persistence:** settings are saved in `settings.json` next to the layouts. Use export/import to back up or move everything as a zip.
+- **Persistence:** settings are saved in `settings.json` next to the layouts. Windows stores them under `%APPDATA%/scoreboard_layouts`; Linux uses `$XDG_CONFIG_HOME/scoreboard_layouts` or `~/.config/scoreboard_layouts`. Use export/import to back up or move everything as a zip.
 
 ## Project structure
 - `packages/scoreboard_core`: pure Dart (no Flutter, no `dart:io`). Contains sports, match state and controller, layouts and bindings, themes and the display protocol.
@@ -76,7 +86,7 @@ settings and visibility must permit deployment.
   - `lib/display/` and `lib/scoreboard/`: display window and renderer.
   - `lib/l10n/`: ARB translations and localized model labels.
   - `lib/storage/`: storage code.
-  - `lib/platform/`: the only code that touches the OS (files, windows, sockets, processes), behind the `AppStorage` and `DisplayOutput` interfaces.
+  - `lib/platform/`: the code that touches the OS (files, windows, sockets, processes), behind the `AppStorage` and `DisplayOutput` interfaces.
 - `.github/`: CI/release workflow and the release notes script.
 
 The app version and author are defined only in `apps/scoreboard/pubspec.yaml`.
@@ -85,10 +95,13 @@ App icon: `apps/scoreboard/assets/icon/app_icon.svg` is the source. After changi
 export `app_icon.png` (1024 px) and run `dart run flutter_launcher_icons` in `apps/scoreboard`.
 
 ## Platforms
-Windows is the supported desktop platform; the browser build is a limited demo.
-Linux, macOS, Android and iOS were removed. You can add them back with
-`flutter create --platforms=<name> .` in `apps/scoreboard`. The platform-specific
-code is in `apps/scoreboard/lib/platform/` and the Windows runner.
+Windows and Linux are supported desktop platforms; the browser build is a
+limited demo. Linux builds currently target x64 and require GTK 3 runtime
+libraries. On Wayland, the compositor controls window placement, so opening the
+display fullscreen on a specific monitor may depend on the desktop environment.
+macOS, Android and iOS are not supported. Platform-specific code is in
+`apps/scoreboard/lib/platform/`, with native runner code under `windows/` and
+`linux/`.
 
 ## Testing
 ```
@@ -110,6 +123,7 @@ The selected language is saved in the settings and also applies to the display w
 - `test-core` (Ubuntu): analyzes and tests `scoreboard_core`.
 - `test-windows` (Windows): analyzes and tests the Flutter app.
 - `build-windows` (Windows): builds the app. On tags, it creates a release build and uploads a zip artifact.
+- `build-linux` (Ubuntu): analyzes, tests and builds the app. On tags, it uploads a Linux x64 bundle as a tarball.
 - `release` (Ubuntu, tags only): runs after all jobs succeed. It extracts the matching changelog section with `.github/scripts/release-notes.sh` and publishes a GitHub release containing the build artifact.
 
 To release:
