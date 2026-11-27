@@ -28,6 +28,30 @@ flutter run -d windows
 Release build: `flutter build windows --release`. The output is written to
 `apps/scoreboard/build/windows/x64/runner/Release`.
 
+## Web demo
+The browser version is a preview of the operator UI and its scoreboard. Match
+controls, settings and the layout editor work in memory; changes are lost on
+reload. The separate display window, local image files and backup import/export
+are unavailable.
+
+To build static files for a GitHub project site:
+
+```
+cd apps/scoreboard
+flutter pub get
+flutter build web --release --base-href /REPOSITORY_NAME/
+```
+
+The site is written to `apps/scoreboard/build/web`. Use `--base-href /` for a
+user or organization site, or when hosting at the domain root. Flutter needs
+HTTP to load the app; opening `index.html` directly does not work. To preview
+locally instead, run `flutter run -d chrome` from `apps/scoreboard`.
+
+For automatic GitHub Pages deployment, set **Settings → Pages → Build and
+deployment → Source** to **GitHub Actions**. The Web demo workflow builds on
+pushes and pull requests and deploys the default branch. The repository's Pages
+settings and visibility must permit deployment.
+
 ## Usage
 - **Display window:** click the TV icon to open it. With several monitors you pick one and it opens in borderless fullscreen there. In the display window, F11 or a double-click toggles fullscreen and Esc leaves it. It closes together with the operator window.
 - **Default hotkeys:** Space start/stop, Q/A home +/-, P/L away +/-, W/O timeout, E/I suspension, N next period/set, Esc abort timeout, Ctrl+Z/Y undo/redo. Shortcuts are ignored while typing in a text field.
@@ -61,9 +85,10 @@ App icon: `apps/scoreboard/assets/icon/app_icon.svg` is the source. After changi
 export `app_icon.png` (1024 px) and run `dart run flutter_launcher_icons` in `apps/scoreboard`.
 
 ## Platforms
-Only Windows is currently supported. Linux, macOS, Android and iOS were removed. You can
-add them back with `flutter create --platforms=<name> .` in `apps/scoreboard`. The
-platform-specific code is in `apps/scoreboard/lib/platform/` and the Windows runner.
+Windows is the supported desktop platform; the browser build is a limited demo.
+Linux, macOS, Android and iOS were removed. You can add them back with
+`flutter create --platforms=<name> .` in `apps/scoreboard`. The platform-specific
+code is in `apps/scoreboard/lib/platform/` and the Windows runner.
 
 ## Testing
 ```

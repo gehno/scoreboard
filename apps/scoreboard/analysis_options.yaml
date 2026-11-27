@@ -5,6 +5,7 @@ analyzer:
     - build/**
     - windows/**
     - lib/l10n/app_localizations*.dart
+    - web/**
 
 linter:
   rules:
