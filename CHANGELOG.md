@@ -6,6 +6,11 @@ The release version is maintained only in `apps/scoreboard/pubspec.yaml`.
 Each release tag `vX.Y.Z` must have exactly one matching `## X.Y.Z` section, which
 is used as the GitHub release description.
 
+## 1.0.1 - Web demo
+
+### Added
+- Static browser demo with a GitHub Pages deployment workflow.
+
 ## 1.0.0 - First release
 
 ### Added
