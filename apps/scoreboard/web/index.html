@@ -4,17 +4,112 @@
   <base href="$FLUTTER_BASE_HREF">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Scoreboard demo">
-  <title>Scoreboard demo</title>
+  <meta name="description" content="Scoreboard">
+  <title>Scoreboard</title>
+  <link rel="icon" type="image/png" href="assets/assets/icon/app_icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #10131b;
+      color: #f3f5fb;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+    }
+
+    #loading-screen,
+    #file-warning {
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 18px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    #loading-screen {
+      background:
+        radial-gradient(ellipse at 50% 42%, #252b3b 0, #171b26 42%, #10131b 78%);
+      transition: opacity 220ms ease;
+    }
+
+    #loading-screen.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-icon {
+      display: block;
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 16px 48px #0005;
+    }
+
+    .loading-title {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 650;
+      letter-spacing: -0.4px;
+    }
+
+    .loading-message {
+      margin: -10px 0 2px;
+      color: #a5adbf;
+      font-size: 14px;
+    }
+
+    .loading-spinner {
+      width: 22px;
+      height: 22px;
+      border: 2px solid #ffffff26;
+      border-top-color: #9cafff;
+      border-radius: 50%;
+      animation: loading-spin 800ms linear infinite;
+    }
+
+    @keyframes loading-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #loading-screen { transition: none; }
+      .loading-spinner { animation-duration: 1800ms; }
+    }
+
+    [hidden] { display: none !important; }
+  </style>
 </head>
 <body>
+  <main id="loading-screen" role="status" aria-live="polite">
+    <img class="loading-icon" src="assets/assets/icon/app_icon.png" alt="">
+    <h1 class="loading-title">Scoreboard</h1>
+    <p class="loading-message">Getting the game ready…</p>
+    <div class="loading-spinner" aria-hidden="true"></div>
+  </main>
   <div id="file-warning" hidden>
     This Flutter demo must be served over HTTP, not opened as a local file.
     To preview it, run <code>flutter run -d chrome</code> from apps/scoreboard.
   </div>
   <script>
+    const loadingScreen = document.getElementById('loading-screen');
     if (window.location.protocol === 'file:') {
       document.getElementById('file-warning').hidden = false;
+      loadingScreen.hidden = true;
+    } else {
+      window.addEventListener('flutter-first-frame', () => {
+        loadingScreen.classList.add('is-hidden');
+        window.setTimeout(() => {
+          loadingScreen.hidden = true;
+        }, 220);
+      }, { once: true });
     }
   </script>
   <script src="flutter_bootstrap.js" async></script>
