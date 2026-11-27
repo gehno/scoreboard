@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Scoreboard app icon</title>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2B44"/>
+      <stop offset="1" stop-color="#0B1B2B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#background)"/>
+
+  <!-- Board -->
+  <rect x="112" y="272" width="800" height="480" rx="64" fill="#0B1B2B" stroke="#2E86FF" stroke-width="16"/>
+
+  <!-- Home score -->
+  <rect x="160" y="328" width="288" height="368" rx="40" fill="#16283D"/>
+  <text x="304" y="588" font-family="Arial, Helvetica, sans-serif" font-size="210" font-weight="700" text-anchor="middle" fill="#FFD400">3</text>
+
+  <!-- Away score -->
+  <rect x="576" y="328" width="288" height="368" rx="40" fill="#16283D"/>
+  <text x="720" y="588" font-family="Arial, Helvetica, sans-serif" font-size="210" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text>
+
+  <!-- Colon between the scores -->
+  <circle cx="512" cy="460" r="28" fill="#2ECC71"/>
+  <circle cx="512" cy="564" r="28" fill="#2ECC71"/>
+
+  <!-- Stand -->
+  <rect x="440" y="752" width="144" height="64" fill="#2E86FF"/>
+  <rect x="320" y="816" width="384" height="48" rx="24" fill="#2E86FF"/>
+</svg>

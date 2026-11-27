@@ -1,0 +1,16 @@
+name: scoreboard_core
+description: Sports, match state and layout model for the scoreboard app.
+# Not versioned on its own: the app's pubspec.yaml holds the only release version.
+publish_to: none
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.14.0
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.9.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6

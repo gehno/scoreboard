@@ -1,0 +1,12 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - windows/**
+    - lib/l10n/app_localizations*.dart
+
+linter:
+  rules:
+    - prefer_single_quotes
+    - unawaited_futures

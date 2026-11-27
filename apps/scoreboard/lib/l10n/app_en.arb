@@ -1,0 +1,207 @@
+{
+  "@@locale": "en",
+  "sportFootball": "Football",
+  "sportTableTennis": "Table tennis",
+  "sportIceHockey": "Ice hockey",
+  "periodFirstHalf": "1st half",
+  "periodSecondHalf": "2nd half",
+  "periodFirstPeriod": "1st period",
+  "periodSecondPeriod": "2nd period",
+  "periodThirdPeriod": "3rd period",
+  "undo": "Undo",
+  "redo": "Redo",
+  "editLayout": "Edit layout",
+  "openDisplayWindow": "Open display window",
+  "settings": "Settings",
+  "about": "About",
+  "version": "Version",
+  "author": "Author",
+  "releasedUnderTheGnuAgplv3": "Released under the GNU AGPLv3",
+  "builtWithAiAgenticCoding": "Built with AI-agentic coding.",
+  "start": "Start",
+  "stop": "Stop",
+  "nextPeriod": "Next period",
+  "nextSet": "Next set",
+  "setClock": "Set clock",
+  "setClockMmSs": "Set clock (mm:ss)",
+  "home": "Home",
+  "away": "Away",
+  "homeUpper": "HOME",
+  "awayUpper": "AWAY",
+  "games": "Games",
+  "sets": "Sets",
+  "suspension": "Suspension",
+  "suspensionT": "Suspension {t}",
+  "@suspensionT": {
+    "placeholders": {
+      "t": {
+        "type": "String"
+      }
+    }
+  },
+  "jerseyNumber": "Jersey number",
+  "optional": "Optional",
+  "timeout": "Timeout",
+  "maxSuspensionsReached": "Max suspensions reached",
+  "noTimeoutsLeft": "No timeouts left",
+  "timeoutSide": "TIMEOUT {side}",
+  "@timeoutSide": {
+    "placeholders": {
+      "side": {
+        "type": "String"
+      }
+    }
+  },
+  "abortRefund": "Abort (refund)",
+  "endNow": "End now",
+  "showScoreboardOnWhichMonitor": "Show scoreboard on which monitor?",
+  "monitorN": "Monitor {n}",
+  "@monitorN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "displayOutputIsNotAvailableOnThisPlatform": "Display output is not available on this platform.",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "teamNames": "Team names",
+  "language": "Language",
+  "logoImageFilePathOptional": "Logo image file path (optional)",
+  "chooseAFileOrDropAnImageHere": "Choose a file or drop an image here",
+  "scoreboard": "Scoreboard",
+  "chooseImage": "Choose image",
+  "showGrid": "Show grid",
+  "hideGrid": "Hide grid",
+  "snapToGridOn": "Snap to grid: on",
+  "snapToGridOff": "Snap to grid: off",
+  "gridSize": "Grid size",
+  "exportAllDataAsZip": "Export all data as zip",
+  "importDataFromZip": "Import data from zip",
+  "exportedToPath": "Exported to {path}",
+  "@exportedToPath": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "importedCountFilesRestartTheAppToApplyThem": "{count, plural, =1{Imported 1 file. Restart the app to apply it.} other{Imported {count} files. Restart the app to apply them.}}",
+  "@importedCountFilesRestartTheAppToApplyThem": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "thisIsNotAValidBackupFile": "This is not a valid backup file.",
+  "unsupportedImageType": "Unsupported image type",
+  "showPreviewInOperatorView": "Show preview in operator view",
+  "matchRules": "Match rules",
+  "timeoutsPerTeam": "Timeouts per team",
+  "timeoutLengthSeconds": "Timeout length (seconds)",
+  "clockDirection": "Clock direction",
+  "countUp": "Count up",
+  "countDown": "Count down",
+  "sport": "Sport",
+  "numberOfPeriodsSets": "Number of periods / sets",
+  "minutesPerPeriod": "Minutes per period",
+  "apply": "Apply",
+  "rulesAppliedNewMatchStarted": "Rules applied – new match started.",
+  "applyingStartsANewMatchForThisSportTeamNamesAreKept": "Applying starts a new match for this sport (team names are kept).",
+  "theme": "Theme",
+  "themeClassic": "Classic",
+  "themeMidnight": "Midnight",
+  "themeDaylight": "Daylight",
+  "themeNeon": "Neon",
+  "themeTerminal": "Terminal",
+  "themeHighContrast": "High contrast",
+  "themeHighContrastLight": "High contrast light",
+  "themeForest": "Forest",
+  "themeSunrise": "Sunrise",
+  "themeMint": "Mint",
+  "themeSky": "Sky",
+  "themePaper": "Paper",
+  "keyboardShortcuts": "Keyboard shortcuts",
+  "resetToDefaults": "Reset to defaults",
+  "pressTheNewKeyCombination": "Press the new key combination",
+  "alreadyUsedByActionTheTwoKeysWillBeSwapped": "Already used by \"{action}\" – the two keys will be swapped.",
+  "@alreadyUsedByActionTheTwoKeysWillBeSwapped": {
+    "placeholders": {
+      "action": {
+        "type": "String"
+      }
+    }
+  },
+  "useHere": "Use here",
+  "shortcutToggleClock": "Start/stop clock",
+  "shortcutHomePlus": "Home +1",
+  "shortcutHomeMinus": "Home −1",
+  "shortcutAwayPlus": "Away +1",
+  "shortcutAwayMinus": "Away −1",
+  "shortcutHomeTimeout": "Home timeout",
+  "shortcutAwayTimeout": "Away timeout",
+  "shortcutHomeSuspension": "Home suspension",
+  "shortcutAwaySuspension": "Away suspension",
+  "shortcutNextPeriod": "Next period / set",
+  "shortcutCancelTimeout": "Abort timeout",
+  "layoutEditorName": "Layout editor – {name}",
+  "@layoutEditorName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addText": "Add text",
+  "addRectangle": "Add rectangle",
+  "addImage": "Add image",
+  "bringForward": "Bring forward",
+  "sendBackward": "Send backward",
+  "delete": "Delete",
+  "save": "Save",
+  "selectAnElement": "Select an element",
+  "text": "Text",
+  "useHomeScoreClock": "Use '{{home.score}}', '{{clock}}' …",
+  "imageFilePath": "Image file path",
+  "visibleWhen": "Visible when",
+  "eGTimeoutActiveOrTimeoutActive": "e.g. timeout.active or !timeout.active",
+  "width": "Width",
+  "height": "Height",
+  "fontSize": "Font size",
+  "bold": "Bold",
+  "textColor": "Text color",
+  "cornerRadius": "Corner radius",
+  "background": "Background",
+  "sportHandball": "Handball",
+  "sportBasketball": "Basketball",
+  "sportVolleyball": "Volleyball",
+  "sportTennis": "Tennis",
+  "x": "X",
+  "y": "Y",
+  "periodNumber": "Period {n}",
+  "@periodNumber": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "setNumber": "Set {n}",
+  "@setNumber": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "gameNumber": "Game {n}",
+  "@gameNumber": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  }
+}

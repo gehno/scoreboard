@@ -1,0 +1,10 @@
+# Safety net for build artefacts; sub-projects have their own rules too.
+build/
+.dart_tool/
+.idea/
+*.iml
+local.properties
+.packages
+*.log
+.DS_Store
+Thumbs.db

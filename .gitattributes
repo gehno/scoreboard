@@ -1,0 +1,17 @@
+# Default: treat text files as text and normalize to LF on both checkout and commit
+* text=auto eol=lf
+
+# Force LF for Linux/Unix scripts and configs (critical for Docker/WSL)
+*.sh text eol=lf
+Makefile text eol=lf
+Dockerfile text eol=lf
+
+# Force CRLF only for Windows-native scripts that require it
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Explicitly protect binary files from corruption
+*.png binary
+*.jpg binary
+*.exe binary
+*.dll binary
